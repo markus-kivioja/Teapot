@@ -1,12 +1,14 @@
-#include "../include/object.h"
-#include "d3dx11.h"
-#include "../include/shaderrenderers/shader.h"
-#include "../include/funcs.h"
-#include <fstream>
-#include "../../../../miniball.hpp"
+#include "object.h"
 
-Object::Object(ID3D11Device* device, ID3D11DeviceContext* deviceContext, char* modelFilename, WCHAR* textureFilename,  
-			   WCHAR* normalFilename, WCHAR* displacementFilename, WCHAR* specularFilename, bool isIndexed, bool isQuadData) :
+#include "shaderrenderers/shader.h"
+#include "funcs.h"
+#include "Miniball.h"
+
+#include "d3dx11.h"
+#include <fstream>
+
+Object::Object(ID3D11Device* device, ID3D11DeviceContext* deviceContext, char* modelFilename, CHAR* textureFilename,  
+			   CHAR* normalFilename, CHAR* displacementFilename, CHAR* specularFilename, bool isIndexed, bool isQuadData) :
 	m_vertexBuffer(0),
 	m_indexBuffer(0),
 	m_texture(0),

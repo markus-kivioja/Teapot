@@ -114,22 +114,22 @@ LightManager::~LightManager()
 	m_vertexBuffer = 0;
 }
 
-float time = 0.0f;
+float gTime = 0.0f;
 void LightManager::update(int dt)
 {
 	for (int i = 0; i < POINT_LIGHT_COUNT; ++i)
-		m_pointLights[i].position.y = 1.05f + (sin(time + m_pointLights[i].position.x * m_pointLights[i].position.z) + 1.0f) * 0.8f;
+		m_pointLights[i].position.y = 1.05f + (sin(gTime + m_pointLights[i].position.x * m_pointLights[i].position.z) + 1.0f) * 0.8f;
 
-	m_spotLights[0].positionSin.y = 4.0f + sin(time);
+	m_spotLights[0].positionSin.y = 4.0f + sin(gTime);
 	m_spotLights[0].directionCos = D3DXVECTOR4(normalize(D3DXVECTOR3(4.0f, 1.0f - m_spotLights[0].positionSin.y,4.0f)), m_spotLights[0].directionCos.w);
 
-	m_spotLights[1].directionCos.x = cos(time);
-	m_spotLights[1].directionCos.z = sin(time);
+	m_spotLights[1].directionCos.x = cos(gTime);
+	m_spotLights[1].directionCos.z = sin(gTime);
 
-	m_spotLights[2].directionCos.x = cos(time);
-	m_spotLights[2].directionCos.z = sin(time);
+	m_spotLights[2].directionCos.x = cos(gTime);
+	m_spotLights[2].directionCos.z = sin(gTime);
 
-	time += 0.05f;
+	gTime += 0.05f;
 }
 
 void LightManager::render(D3DXVECTOR3 cameraDirection)

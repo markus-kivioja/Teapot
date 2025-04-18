@@ -53,7 +53,7 @@ bool ParticleShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceConte
 	size_t vs_size;
 	char* vs_data;
 
-	char* file = "../Teapot/data/shaders/particleVS.sb";
+	char* file = "shaders/particleVS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{
@@ -111,7 +111,7 @@ bool ParticleShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceConte
 
 	device->CreateInputLayout(vbLayout, numElements, vs_data, vs_size, &m_layout);
 
-	file = "../Teapot/data/shaders/particleDropPS.sb";
+	file = "shaders/particleDropPS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{
@@ -130,7 +130,7 @@ bool ParticleShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceConte
 		return false;
 	}
 
-	file = "../Teapot/data/shaders/particleSplashPS.sb";
+	file = "shaders/particleSplashPS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{
@@ -149,7 +149,7 @@ bool ParticleShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceConte
 		return false;
 	}
 
-	file = "../Teapot/data/shaders/particlePointLightPS.sb";
+	file = "shaders/particlePointLightPS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{

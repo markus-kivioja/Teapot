@@ -37,7 +37,7 @@ bool Window::init()
 
 	m_hinstance = GetModuleHandle(NULL);
 
-	m_applicationName = L"Teapot";
+	m_applicationName = "Teapot";
 
 	wc.style         = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
 	wc.lpfnWndProc   = s_windowProc;

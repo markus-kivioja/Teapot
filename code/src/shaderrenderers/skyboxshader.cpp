@@ -25,7 +25,7 @@ bool SkyboxShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceContext
 	size_t vs_size;
 	char* vs_data;
 
-	char* file = "../Teapot/data/shaders/skyboxVS.sb";
+	char* file = "shaders/skyboxVS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{
@@ -55,7 +55,7 @@ bool SkyboxShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceContext
 
 	device->CreateInputLayout(&polygonLayout, 1, vs_data, vs_size, &m_layout);
 
-	file = "../Teapot/data/shaders/skyboxPS.sb";
+	file = "shaders/skyboxPS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{

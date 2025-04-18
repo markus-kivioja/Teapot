@@ -37,7 +37,7 @@ bool RainBufferShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceCon
 	size_t vs_size;
 	char* vs_data;
 
-	char* file = "../Teapot/data/shaders/rainbufVS.sb";
+	char* file = "shaders/rainbufVS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{
@@ -84,7 +84,7 @@ bool RainBufferShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceCon
 
 	device->CreateInputLayout(polygonLayout, numElements, vs_data, vs_size, &m_layout);
 
-	file = "../Teapot/data/shaders/rainbufPS.sb";
+	file = "shaders/rainbufPS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{

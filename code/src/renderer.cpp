@@ -1,7 +1,7 @@
-#include "../include/renderer.h"
-#include "../include/constant_parameters.h"
-#include "../include/rendertarget.h"
-#include "../include/funcs.h"
+#include "renderer.h"
+#include "constant_parameters.h"
+#include "rendertarget.h"
+#include "funcs.h"
 
 Renderer::Renderer(int screenWidth, int screenHeight, HWND hwnd)
 {

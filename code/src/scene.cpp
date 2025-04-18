@@ -116,7 +116,7 @@ bool Scene::init(int screenWidth, int screenHeight, HWND hwnd)
 	D3DX11_IMAGE_LOAD_INFO loadInfo;
 	loadInfo.MiscFlags = D3D11_RESOURCE_MISC_TEXTURECUBE;
 	HRESULT result;
-	D3DX11CreateTextureFromFile(m_device, L"../Teapot/data/textures/cubemap.dds", &loadInfo, NULL, (ID3D11Resource**)&texture, &result);
+	D3DX11CreateTextureFromFile(m_device, "textures/cubemap.dds", &loadInfo, NULL, (ID3D11Resource**)&texture, &result);
 	if(FAILED(result))
 	{
 		output("LOADING CUBE MAP FAILED\n");
@@ -170,26 +170,26 @@ void Scene::initRenderTargets(int screenWidth, int screenHeight)
 void Scene::initObjects()
 {
 #ifdef BINARY_MESH
-	Object* object = new Object(m_device, m_deviceContext, "../Teapot/data/models/table.mymesh", L"../Teapot/data/textures/ground_colorMap.dds", 
-								L"../Teapot/data/textures/ground_normalMap.dds", L"../Teapot/data/textures/ground_displacementMap.dds", 
-								L"../Teapot/data/textures/dummy_specularMap.dds", false, false);
+	Object* object = new Object(m_device, m_deviceContext, "models/table.mymesh", "textures/ground_colorMap.dds", 
+								"textures/ground_normalMap.dds", "textures/ground_displacementMap.dds", 
+								"textures/dummy_specularMap.dds", false, false);
 #else
-	Object* object = new Object(m_device, m_deviceContext, "../Teapot/data/models/table.obj", L"../Teapot/data/textures/ground_colorMap.dds", 
-								L"../Teapot/data/textures/ground_normalMap.dds", L"../Teapot/data/textures/ground_displacementMap.dds", 
-								L"../Teapot/data/textures/dummy_specularMap.dds", false, false);
+	Object* object = new Object(m_device, m_deviceContext, "models/table.obj", "textures/ground_colorMap.dds", 
+								"textures/ground_normalMap.dds", "textures/ground_displacementMap.dds", 
+								"textures/dummy_specularMap.dds", false, false);
 #endif
 	object->setShininess(49.0f);
 	object->setPosition(0.0f, 1.0f, 0.0f);
 	m_objects.push_back(object);
 
 #ifdef BINARY_MESH
-	object = new Object(m_device, m_deviceContext, "../Teapot/data/models/newTeapot.mymesh", L"../Teapot/data/textures/porcelain.dds",
-						L"../Teapot/data/textures/dummy_normalMap.dds", L"../Teapot/data/textures/dummy_displacementMap.dds", 
-						L"../Teapot/data/textures/dummy_specularMap.dds", true, false);
+	object = new Object(m_device, m_deviceContext, "models/newTeapot.mymesh", "textures/porcelain.dds",
+						"textures/dummy_normalMap.dds", "textures/dummy_displacementMap.dds", 
+						"textures/dummy_specularMap.dds", true, false);
 #else
-	object = new Object(m_device, m_deviceContext, "../Teapot/data/models/newTeapot.obj", L"../Teapot/data/textures/porcelain.dds",
-						L"../Teapot/data/textures/dummy_normalMap.dds", L"../Teapot/data/textures/dummy_displacementMap.dds", 
-						L"../Teapot/data/textures/dummy_specularMap.dds", true, false);
+	object = new Object(m_device, m_deviceContext, "models/newTeapot.obj", "textures/porcelain.dds",
+						"textures/dummy_normalMap.dds", "textures/dummy_displacementMap.dds", 
+						"textures/dummy_specularMap.dds", true, false);
 #endif
 	object->setBackfaceCulling(false);
 	object->setShininess(110.0f);
@@ -198,13 +198,13 @@ void Scene::initObjects()
 	m_objects.push_back(object);
 
 #ifdef BINARY_MESH
-	object = new Object(m_device, m_deviceContext, "../Teapot/data/models/mickey.mymesh", L"../Teapot/data/textures/mickey.dds",
-						L"../Teapot/data/textures/dummy_normalMap.dds", L"../Teapot/data/textures/dummy_displacementMap.dds", 
-						L"../Teapot/data/textures/dummy_specularMap.dds", true, false);
+	object = new Object(m_device, m_deviceContext, "models/mickey.mymesh", "textures/mickey.dds",
+						"textures/dummy_normalMap.dds", "textures/dummy_displacementMap.dds", 
+						"textures/dummy_specularMap.dds", true, false);
 #else
-	object = new Object(m_device, m_deviceContext, "../Teapot/data/models/mickey.obj", L"../Teapot/data/textures/mickey.dds",
-						L"../Teapot/data/textures/dummy_normalMap.dds", L"../Teapot/data/textures/dummy_displacementMap.dds", 
-						L"../Teapot/data/textures/dummy_specularMap.dds", true, false);
+	object = new Object(m_device, m_deviceContext, "models/mickey.obj", "textures/mickey.dds",
+						"textures/dummy_normalMap.dds", "textures/dummy_displacementMap.dds", 
+						"textures/dummy_specularMap.dds", true, false);
 #endif
 	object->setShininess(49.0f);
 	object->setPosition(-2.5f, 1.2f, -2.0f);
@@ -213,13 +213,13 @@ void Scene::initObjects()
 	m_objects.push_back(object);
 
 #ifdef BINARY_MESH
-	object = new Object(m_device, m_deviceContext, "../Teapot/data/models/rock.mymesh", L"../Teapot/data/textures/rock_color.dds",
-						L"../Teapot/data/textures/rock_normalMap.dds", L"../Teapot/data/textures/rock_displacementMap.dds", 
-						L"../Teapot/data/textures/rock_specularMap.dds", true, true);
+	object = new Object(m_device, m_deviceContext, "models/rock.mymesh", "textures/rock_color.dds",
+						"textures/rock_normalMap.dds", "textures/rock_displacementMap.dds", 
+						"textures/rock_specularMap.dds", true, true);
 #else
-	object = new Object(m_device, m_deviceContext, "../Teapot/data/models/rock.obj", L"../Teapot/data/textures/rock_color.dds",
-						L"../Teapot/data/textures/rock_normalMap.dds", L"../Teapot/data/textures/rock_displacementMap.dds", 
-						L"../Teapot/data/textures/rock_specularMap.dds", true, true);
+	object = new Object(m_device, m_deviceContext, "models/rock.obj", "textures/rock_color.dds",
+						"textures/rock_normalMap.dds", "textures/rock_displacementMap.dds", 
+						"textures/rock_specularMap.dds", true, true);
 #endif
 	object->setShininess(9.0f);
 	object->setPosition(2.0f, 1.7f, 2.0f);

@@ -14,8 +14,8 @@ class Object
 {
 public:
 	Object(ID3D11Device* device, ID3D11DeviceContext* deviceContext, char* modelFilename, 
-		   WCHAR* textureFilename, WCHAR* normalFilename, WCHAR* displacementFilename,
-		   WCHAR* specularFilename, bool isIndexed, bool isQuadData);
+		   CHAR* textureFilename, CHAR* normalFilename, CHAR* displacementFilename,
+		   CHAR* specularFilename, bool isIndexed, bool isQuadData);
 	~Object();
 
 	void render(Shader* shader);

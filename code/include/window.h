@@ -26,7 +26,7 @@ private:
 	Scene* m_scene;
 	Input* m_input;
 
-	LPCWSTR m_applicationName;
+	LPCSTR m_applicationName;
 	HINSTANCE m_hinstance;
 	HWND m_hwnd;
 

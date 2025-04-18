@@ -58,7 +58,7 @@ bool GBufferShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceContex
 	size_t vs_size;
 	char* vs_data;
 
-	char* file = "../Teapot/data/shaders/gbufferVS.sb";
+	char* file = "shaders/gbufferVS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{
@@ -78,7 +78,7 @@ bool GBufferShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceContex
 	}
 
 	HRESULT result;
-	D3DX11CreateShaderResourceViewFromFile(device, L"../Teapot/data/textures/puddleMask.dds", NULL, NULL, &m_puddleMask, &result);
+	D3DX11CreateShaderResourceViewFromFile(device, "textures/puddleMask.dds", NULL, NULL, &m_puddleMask, &result);
 	if(FAILED(result))
 		output("LOADING PUDDLE MASK FAILED\n");
 
@@ -116,7 +116,7 @@ bool GBufferShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceContex
 
 	device->CreateInputLayout(polygonLayout, numElements, vs_data, vs_size, &m_layout);
 
-	file = "../Teapot/data/shaders/gbufferDribblePS.sb";
+	file = "shaders/gbufferDribblePS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{
@@ -134,7 +134,7 @@ bool GBufferShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceContex
 		output("\n!!!CAN'T FIND %s!!!\n\n", file);
 		return false;
 	}
-	file = "../Teapot/data/shaders/gbufferRingPS.sb";
+	file = "shaders/gbufferRingPS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{

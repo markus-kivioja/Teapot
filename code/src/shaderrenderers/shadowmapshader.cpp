@@ -32,7 +32,7 @@ bool ShadowMapShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceCont
 	size_t vs_size;
 	char* vs_data;
 
-	char* file = "../Teapot/data/shaders/shadowmapVS.sb";
+	char* file = "shaders/shadowmapVS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{

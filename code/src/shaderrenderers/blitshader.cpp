@@ -21,7 +21,7 @@ bool BlitShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceContext)
 	size_t vs_size;
 	char* vs_data;
 
-	char* file = "../Teapot/data/shaders/blitVS.sb";
+	char* file = "shaders/blitVS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{
@@ -40,7 +40,7 @@ bool BlitShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceContext)
 		return false;
 	}
 
-	file = "../Teapot/data/shaders/blitarrayVS.sb";
+	file = "shaders/blitarrayVS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{
@@ -59,7 +59,7 @@ bool BlitShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceContext)
 		return false;
 	}
 
-	file = "../Teapot/data/shaders/blitPS.sb";
+	file = "shaders/blitPS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{
@@ -78,7 +78,7 @@ bool BlitShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceContext)
 		return false;
 	}
 
-	file = "../Teapot/data/shaders/blitarrayPS.sb";
+	file = "shaders/blitarrayPS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{

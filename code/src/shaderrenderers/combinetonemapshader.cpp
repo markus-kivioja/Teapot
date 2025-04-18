@@ -19,7 +19,7 @@ bool CombineTonemapShader::init(ID3D11Device* device, ID3D11DeviceContext* devic
 	size_t vs_size;
 	char* vs_data;
 
-	char* file = "../Teapot/data/shaders/combine_tonemapVS.sb";
+	char* file = "shaders/combine_tonemapVS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{
@@ -37,7 +37,7 @@ bool CombineTonemapShader::init(ID3D11Device* device, ID3D11DeviceContext* devic
 		output("\n!!!CAN'T FIND %s!!!\n\n", file);
 		return false;
 	}
-	file = "../Teapot/data/shaders/combine_tonemapPS.sb";
+	file = "shaders/combine_tonemapPS.sb";
 	vs_stream.open(file, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
 	{

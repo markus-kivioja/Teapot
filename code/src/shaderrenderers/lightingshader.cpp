@@ -72,7 +72,7 @@ bool LightingShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceConte
 	size_t vs_size;
 	char* vs_data;
 
-	char* lightShaderFile = "../Teapot/data/shaders/lighting.sb";
+	char* lightShaderFile = "shaders/lighting.sb";
 
 	vs_stream.open(lightShaderFile, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())
@@ -92,7 +92,7 @@ bool LightingShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceConte
 		return false;
 	}
 
-	char* lightTransformShaderFile = "../Teapot/data/shaders/lighttransform.sb";
+	char* lightTransformShaderFile = "shaders/lighttransform.sb";
 
 	vs_stream.open(lightTransformShaderFile, std::ifstream::in | std::ifstream::binary);
 	if (vs_stream.good())

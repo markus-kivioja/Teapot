@@ -23,13 +23,6 @@ D3DXVECTOR4 normalize(D3DXVECTOR4 v)
 	return v / sqrt(v.x*v.x + v.y*v.y + v.z*v.z + v.w*v.w);
 }
 
-wchar_t *convertCharArrayToLPCWSTR(const char* charArray)
-{
-    wchar_t* wString=new wchar_t[4096];
-    MultiByteToWideChar(CP_ACP, 0, charArray, -1, wString, 4096);
-    return wString;
-}
-
  void output(const char* szFormat, ...)
 {
     char szBuff[4096];
@@ -38,11 +31,7 @@ wchar_t *convertCharArrayToLPCWSTR(const char* charArray)
     _vsnprintf_s(szBuff, sizeof(szBuff), szFormat, arg);
     va_end(arg);
 
-	LPCWSTR string = convertCharArrayToLPCWSTR(szBuff);
-
-    OutputDebugString(string);
-
-	delete[] string;
+    OutputDebugString(szBuff);
 }
 
 float random(float start, float end)

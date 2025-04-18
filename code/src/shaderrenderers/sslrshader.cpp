@@ -28,7 +28,7 @@ bool SSLRShader::init(ID3D11Device* device, ID3D11DeviceContext* deviceContext)
 	size_t vs_size;
 	char* vs_data;
 
-	char* filename = "../Teapot/data/shaders/sslr.sb";
+	char* filename = "shaders/sslr.sb";
 	vs_stream.open(filename, std::ifstream::in | std::ifstream::binary);
 	if(vs_stream.good())
 	{
