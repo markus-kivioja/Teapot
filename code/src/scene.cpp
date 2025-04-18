@@ -333,8 +333,9 @@ void Scene::updateCamera()
 	else
 		updateOn = true;
 
+	static constexpr float mouseSensitivity = 0.0005f;
 	if (m_mouseX != -1 && (m_mouseX != x || m_mouseY != y))
-		m_camera->turn((m_mouseY - y) * 0.002f, (m_mouseX - x) * 0.002f);
+		m_camera->turn((m_mouseY - y) * mouseSensitivity, (m_mouseX - x) * mouseSensitivity);
 
 	
 	m_mouseX = x;
