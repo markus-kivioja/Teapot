@@ -481,13 +481,13 @@ void Scene::renderLighting()
 	ID3D11ShaderResourceView* temp2[] = {0, 0, 0, 0, 0, 0};
 	m_deviceContext->CSSetShaderResources(0, 6, temp2);
 
-	ID3D11ShaderResourceView* srv = m_lightingTarget->getShaderResourceView();
-	m_deviceContext->PSSetShaderResources(0, 1, &srv);
-	m_blitShader->setPositionSize(D3DXVECTOR4(-1, -1, 2, 2));	
-	m_renderer->disableDepth();
-	m_blitShader->setTechnique(NORMAL_TECHNIQUE);
-	m_blitShader->render(4, 1);
-	m_renderer->enableDepth();
+	//ID3D11ShaderResourceView* srv = m_lightingTarget->getShaderResourceView();
+	//m_deviceContext->PSSetShaderResources(0, 1, &srv);
+	//m_blitShader->setPositionSize(D3DXVECTOR4(-1, -1, 2, 2));
+	//m_renderer->disableDepth();
+	//m_blitShader->setTechnique(NORMAL_TECHNIQUE);
+	//m_blitShader->render(4, 1);
+	//m_renderer->enableDepth();
 
 	m_deviceContext->PSSetShaderResources(0, 2, temp2);
 }
